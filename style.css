@@ -19,7 +19,6 @@ body {
     justify-content: space-evenly;
     align-items: center;
     min-width: 6%;
-    
     flex-basis: 100%;
     aspect-ratio: 1/1;
     border-bottom: 20px;
@@ -27,7 +26,7 @@ body {
     color: white;
 }
 
-.highlight {
+.container > .highlight {
     background-color: aqua;
     color: aqua;
 }

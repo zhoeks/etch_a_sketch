@@ -2,6 +2,7 @@
 const mainBody = document.body;
 const div = document.createElement('div');
 const button = document.createElement('button');
+
 button.classList.add('restart');
 button.textContent = 'Start Over'
 div.classList.add('container');
@@ -13,7 +14,7 @@ const createRow = (num) => {
     for (let i = 0; i < num; i++) {
         const container = document.querySelector('.container');
         const create = document.createElement('div');
-        create.classList.add('row'+[i]);
+        //create.classList.add('row'+[i]);
         create.classList.add('gridBox');
         create.textContent = 0;
         container.appendChild(create);
@@ -26,7 +27,7 @@ const fillPage = (num) => {
     }
 }
 
-fillPage(25);
+fillPage(16);
 
 const gridHover = document.querySelectorAll('.gridBox');
 gridHover.forEach((gridBox) => {
@@ -35,3 +36,21 @@ gridHover.forEach((gridBox) => {
 });
 });
 
+const startOver = document.querySelector('button');
+startOver.addEventListener('click', (e) => {
+    var gridNumber = prompt('How many boxes?');
+    var colored = document.querySelectorAll('.gridBox');
+    colored.forEach((box) => {
+        box.parentNode.removeChild(box);
+    });
+    console.log(gridNumber);
+    fillPage(gridNumber);
+    const gridHover = document.querySelectorAll('.gridBox');
+    gridHover.forEach((gridBox) => {
+    gridBox.addEventListener('mouseover', (e) => {
+        gridBox.classList.add('highlight');
+});
+});
+});
+
+console.log(div);
