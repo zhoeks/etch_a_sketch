@@ -17,9 +17,10 @@ body {
 .container > .gridBox {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
-    min-width: 6%;
-    flex-basis: 100%;
+    /*min-width: 6%;
+    flex-basis: 100%;*/
     aspect-ratio: 1/1;
     border-bottom: 20px;
     flex: 1;

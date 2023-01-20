@@ -12,10 +12,13 @@ mainBody.appendChild(div);
 
 const createRow = (num) => {
     for (let i = 0; i < num; i++) {
+        const width = (100 / num) + '%';
         const container = document.querySelector('.container');
         const create = document.createElement('div');
         //create.classList.add('row'+[i]);
         create.classList.add('gridBox');
+        create.style.minWidth = width;
+        create.style.minHeight = width;
         create.textContent = 0;
         container.appendChild(create);
     }
@@ -38,12 +41,11 @@ gridHover.forEach((gridBox) => {
 
 const startOver = document.querySelector('button');
 startOver.addEventListener('click', (e) => {
-    var gridNumber = prompt('How many boxes?');
+    var gridNumber = prompt('How many boxes?(Less than 50)');
     var colored = document.querySelectorAll('.gridBox');
     colored.forEach((box) => {
         box.parentNode.removeChild(box);
     });
-    console.log(gridNumber);
     fillPage(gridNumber);
     const gridHover = document.querySelectorAll('.gridBox');
     gridHover.forEach((gridBox) => {
